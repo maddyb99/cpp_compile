@@ -1,0 +1,12 @@
+build-job:
+  stage: build
+  script:
+    - cd ./calculator/
+    - make 
+
+test-job1:
+  stage: test
+  script:
+    - cd ./calculator/test/
+    - make
+    - ./testAll
