@@ -1,9 +1,13 @@
 image: gcc
+before_script:
+ - apt-get update --yes
+ - apt-get install --yes cmake
 build-job:
   stage: build
   script:
-    - cd ./calculator/
-    - cmake CMakeLists.txt
+    - mkdir ./calculator/build
+    - cd ./calculator/build
+    - cmake ..
     - make 
 
 test-job1:
