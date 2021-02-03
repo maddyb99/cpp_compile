@@ -1,7 +1,9 @@
+image: gcc
 build-job:
   stage: build
   script:
     - cd ./calculator/
+    - cmake CMakeLists.txt
     - make 
 
 test-job1:
