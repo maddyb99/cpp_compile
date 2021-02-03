@@ -2,6 +2,7 @@ image: gcc
 before_script:
  - apt-get update --yes
  - apt-get install --yes cmake
+ - apt-get install --yes libgtest-dev
 build-job:
   stage: build
   script:
@@ -13,6 +14,8 @@ build-job:
 test-job1:
   stage: test
   script:
-    - cd ./calculator/test/
-    - make
-    - ./testAll
+    - mkdir ./calculator/test/build
+    - cd ./calculator/test/build
+    - cmake ..
+    - make 
+    - ./CalculatorTest
