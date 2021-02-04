@@ -6,6 +6,8 @@ before_script:
 build-job:
   stage: build
   script:
+    - git submodule init
+    - git submodule update
     - mkdir ./cpp_calculator/build
     - cd ./cpp_calculator/build
     - cmake ..
@@ -14,6 +16,8 @@ build-job:
 test-job1:
   stage: test
   script:
+    - git submodule init
+    - git submodule update
     - mkdir ./cpp_calculator/test/build
     - cd ./cpp_calculator/test/build
     - cmake ..
