@@ -1,18 +1,21 @@
 image: gcc
-
+before_script:
+ - apt-get update --yes
+ - apt-get install --yes cmake
+ - apt-get install --yes libgtest-dev
 build-job:
   stage: build
   script:
-    - mkdir ./calculator/build
-    - cd ./calculator/build
+    - mkdir ./cpp_calculator/build
+    - cd ./cpp_calculator/build
     - cmake ..
     - make 
 
 test-job1:
   stage: test
   script:
-    - mkdir ./calculator/test/build
-    - cd ./calculator/test/build
+    - mkdir ./cpp_calculator/test/build
+    - cd ./cpp_calculator/test/build
     - cmake ..
     - make 
     - ./CalculatorTest
