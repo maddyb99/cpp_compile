@@ -1,3 +1,6 @@
 [submodule "cpp_calculator"]
 	path = cpp_calculator
 	url = https://github.com/maddyb99/cpp_calculator
+[submodule "cpp_docker"]
+	path = cpp_docker
+	url = https://gitlab.com/maddyb99/cpp_docker
