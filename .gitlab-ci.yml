@@ -1,8 +1,19 @@
-image: gcc
-before_script:
- - apt-get update --yes
- - apt-get install --yes cmake
- - apt-get install --yes libgtest-dev
+image: ${{build_dev_image}}
+# before_script:
+#  - apt-get update --yes
+#  - apt-get install --yes cmake
+#  - apt-get install --yes libgtest-dev
+
+
+build_dev_image:
+  title: Building Dev Image
+  stage: prepare
+  type: build
+  image_name: maddy_cmake
+  working_directory: ./cpp_calculator
+  tag: 'latest'
+  dockerfile: dockerfile
+
 build-job:
   stage: build
   script:
